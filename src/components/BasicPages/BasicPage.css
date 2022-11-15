@@ -1,0 +1,13 @@
+.backgroundPic {
+    width: 100%;
+    height: 35vh;
+}
+
+.bottom-page {
+    display: grid;
+    width: 100%;
+}
+
+.top-page {
+    margin-bottom: -5vh;
+}

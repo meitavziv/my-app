@@ -1,0 +1,52 @@
+.section-pic {
+    height: 30%;
+    border: 1px solid;
+}
+
+.section-data > .ant-card-head > .ant-card-head-wrapper {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    border: 1px solid white;
+    justify-content: center;
+}
+
+.ant-card.ant-card-bordered.section-data {
+    width: 32vh;
+    margin: 2vh;
+    border: none;
+}
+
+.section-data > .ant-card-head > .ant-card-head-wrapper > .ant-card-head-title {
+    color: whitesmoke;
+    font-size: 2.5vh;
+    padding-bottom: 0;
+    font-family: cursive;
+}
+
+.section-data > .ant-card-head > .ant-card-head-wrapper > .ant-card-extra {
+    margin-left: inherit;
+    padding-top: 0;
+}
+
+.section-data > .ant-card-head > .ant-card-head-wrapper > .ant-card-extra > .ant-avatar-image {
+    height: 5vh;
+    width: 5vh;
+}
+
+
+.section-data > .ant-card-body > .section-pic > img {
+    height: 20vh;
+    width: 100%;
+    min-height: 21vh;
+}
+
+.section-data > .ant-card-body {
+    padding: 0 3vh 3vh 3vh;
+}
+
+.section-data > .ant-card-head {
+    padding: 3vh 3vh 0 3vh;
+    background-color: black;
+}
+

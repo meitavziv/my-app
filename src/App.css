@@ -1,0 +1,19 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 9vh;
+  margin-top: 3vh;
+  width: 10vh;
+  color: white;
+  margin: 3vh 50vh;
+}
+
+.App-header {
+  background: black;
+  height: 8vh;
+  width: 100%;
+}

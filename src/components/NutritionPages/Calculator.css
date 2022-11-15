@@ -1,0 +1,22 @@
+.circle {
+  display: flex;
+  align-items: center;
+  width: 25vh;
+  height: 25vh;
+  background-color: #ea2a44;
+  border-radius: 50%;
+  margin: -3vh 3vh;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+  font-size: 3vh;
+}
+
+p.circle-title {
+  text-align: center;
+}
+
+p.calories {
+  font-size: 5vh;
+  margin-top: -3vh;
+}
