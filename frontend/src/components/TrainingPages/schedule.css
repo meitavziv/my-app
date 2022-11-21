@@ -1,0 +1,34 @@
+.schedule-page {
+    display: grid;
+}
+
+.schedule-top-page {
+    margin-top: -12%;
+    align-items: center;
+    display: inline-flex;
+    direction: rtl;
+    margin-bottom: 3%;
+    margin-right: 2%;
+}
+
+span.ant-avatar.ant-avatar-circle.ant-avatar-image.title-logo {
+    width: 5vh;
+    height: 5vh;
+}
+
+.schedule-top-page >.divider {
+    height: 4vh;
+    width: 1vh;
+    margin: 0 1vh;
+}
+
+h2.schedule-subtitle {
+    margin: 0;
+}
+
+.schedule-table {
+    direction: rtl;
+    width: 150vh;
+    justify-self: center;
+    text-align-last: center;
+}

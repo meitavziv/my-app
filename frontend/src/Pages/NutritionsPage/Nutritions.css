@@ -1,0 +1,21 @@
+span.ant-avatar.ant-avatar-circle.ant-avatar-image.nutrition-logo {
+    margin: 0 15vh 2vh 15vh;
+    height: 10vh;
+    width: 10vh;
+}
+
+.nutritions-section {
+    text-align: -webkit-center;
+}
+
+.divider {
+    height: 1.5vh;
+    width: 6vh;
+    background-color: #ea2a44;
+}
+
+.nutritions-section > h2 {
+    color: #575758;
+    margin: 1vh;
+}
+
