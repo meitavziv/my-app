@@ -1,9 +1,10 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { calcLogo, nutritionHomePage } from '../../image';
 import Avatar from 'antd/lib/avatar/avatar';
-import { Card, Cascader, InputNumber } from 'antd';
+import { Card, Cascader, InputNumber, Button } from 'antd';
 import { BottomBasicPage, Calculator } from '../index';
-import '../NutritionPages/Nutritions.css'
+import '../NutritionPages/NutritionsCalc.css'
+import { calcCalories } from '../../actions/calc'
 
 
 export default function Calc() {
@@ -14,6 +15,13 @@ export default function Calc() {
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
     const [age, setAge] = useState('');
+    const [calories, setCalories] = useState(0);
+
+    function onClick(){
+        const details = {"age": age, "weight": weight, "height": height, "gender": genderField, "purpose": purposeField, "intensive": intensiveField, "training": trainingField}
+        calcCalories(details).then((e) => {setCalories(e)})
+    }
+
 
     const gender = [
         { 
@@ -76,12 +84,6 @@ export default function Calc() {
             label: 6
         }
     ]
-    // const onChange = (value, key) => {
-    //     console.log(key)
-    //     console.log(field)
-    //     setDetailsDict(detailsDict[key[0]['label']]= key[0]['value'])
-    //     console.log(detailsDict)
-    // }
 
     const bottomValue = <>
         <div className='calc'>
@@ -92,22 +94,21 @@ export default function Calc() {
             </div>
             <div className='calc-cards'>
                 <Card className='user-details'>
-                    <p>מגדר: <Cascader options={gender} onChange={(value) => setGenderField(value)} placeholder="מגדר"/></p>
+                    <p>מגדר: <Cascader options={gender} onChange={(value) => setGenderField(value[0])} placeholder="מגדר"/></p>
                     <p>גיל: <InputNumber min={1} max={100} onChange={(value) => setAge(value)} /></p>
                     <p>גובה: <InputNumber min={100} max={200} onChange={(value) => setHeight(value)}/></p>
                     <p>משקל: <InputNumber min={30} max={200} onChange={(value) => setWeight(value)}/></p>
                 </Card>
                 <Card className='train-details'>
-                    <p>מטרה: <Cascader options={purpose} onChange={(value) => setPurposeField(value)} placeholder="מטרה" /></p>
-                    <p>רמת פעילות יומית: <Cascader options={intensive} onChange={(value) => setIntensiveField(value)} placeholder="רמת פעילות יומית" /></p>
-                    <p>מספר אימונים בשבוע: <Cascader options={training} onChange={(value) => setTrainingField(value)} placeholder="כמות אימונים בשבוע" /></p>
+                    <p>מטרה: <Cascader options={purpose} onChange={(value) => setPurposeField(value[0])} placeholder="מטרה" /></p>
+                    <p>רמת פעילות יומית: <Cascader options={intensive} onChange={(value) => setIntensiveField(value[0])} placeholder="רמת פעילות יומית" /></p>
+                    <p>מספר אימונים בשבוע: <Cascader options={training} onChange={(value) => setTrainingField(value[0])} placeholder="כמות אימונים בשבוע" /></p>
+                    <Button className='calc-button' onClick={onClick}> בדיקה </Button>
                 </Card>
-                <Calculator/>
+                <Calculator calories={calories}/>
             </div>
         </div>
     </>
-
-    const detailsDict = {'age': age, 'weight': weight, 'height': height, 'gender': genderField, 'purpose': purposeField, 'intensive': intensiveField, 'training': trainingField}
 
     return (<>
         <BottomBasicPage title={'תזונה'} img={nutritionHomePage} bottomValue={bottomValue}/>

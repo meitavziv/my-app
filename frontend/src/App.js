@@ -1,5 +1,6 @@
 import './App.css';
-import { Navbar, HomePage, NutritionHomePage, NutritionCalcPage, TrainingHomePage, Schedule } from './components/index'
+import { Navbar, NutritionCalcPage, Schedule } from './components/index'
+import { HomePage, NutritionHomePage, TrainingHomePage} from './Pages/index'
 import Avatar from 'antd/lib/avatar/avatar';
 import { logo } from './image/index';
 import {

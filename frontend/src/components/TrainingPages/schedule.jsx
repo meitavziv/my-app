@@ -1,12 +1,20 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { muscleLogo, trainingHomePage } from '../../image';
 import Avatar from 'antd/lib/avatar/avatar';
 import { Table } from 'antd';
 import { BottomBasicPage} from '../index';
-import '../TrainingPages/Training.css'
+import '../TrainingPages/schedule.css'
+import { trainingTable } from '../../actions/trainingTable'
+
 
 
 export default function Schedule() {
+
+    useEffect(() => {
+
+    })
+    const trainingData = trainingTable()
+    console.log(trainingData)
 
     const columns = [
         {
