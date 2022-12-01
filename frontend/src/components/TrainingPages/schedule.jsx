@@ -9,14 +9,24 @@ import { trainingTable } from '../../actions/trainingTable'
 
 
 export default function Schedule() {
+    
+    const [trainingData, setTrainingData] = useState();
+    // const columns = ["שעה", "ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי"]
 
+    // const days = {'ראשון':'sunday', 'שני': 'monday', 'שלישי':'tuesday', 'רביעי':'wednesday', 'חמישי':'thursday', 'שישי':'friday'}
     useEffect(() => {
+        trainingTable().then((e) => {setTrainingData(e)})
+        console.log(trainingData)
+    }, [])
 
-    })
-    const trainingData = trainingTable()
-    console.log(trainingData)
+    
 
     const columns = [
+        {
+            title: 'שעה',
+            dataIndex: 'time',
+            key: 'time'
+        },
         {
           title: 'ראשון',
           dataIndex: 'sunday',
@@ -55,11 +65,7 @@ export default function Schedule() {
 
     ]
 
-    const data = [
-        {
-            
-        }
-    ]
+    const data = trainingData
 
     const bottomValue = <>
         <div className='schedule-page'>
@@ -68,9 +74,7 @@ export default function Schedule() {
                 <div className='divider'/>
                 <h2 className='schedule-subtitle'>{'לוח אימונים'} </h2>
             </div>
-            <div className='schedule-table'>
-                <Table columns={columns} dataSource={data} />;
-            </div>
+            <Table className='schedule-table' columns={columns} dataSource={data} pagination={null}/>;
         </div>
     </>
 

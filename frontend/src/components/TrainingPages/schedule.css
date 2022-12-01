@@ -31,4 +31,24 @@ h2.schedule-subtitle {
     width: 150vh;
     justify-self: center;
     text-align-last: center;
+    margin-top: -3%;
 }
+
+th.ant-table-cell {
+    background-color: #ea2a44 !important;
+    color: white !important;
+    font-size: 1.8vh;
+}
+
+tbody.ant-table-tbody {
+    background-color: #dcdce5;
+    color: #7e7575;
+}
+
+ul.ant-pagination.ant-table-pagination.ant-table-pagination-right {
+    display: none;
+}
+
+.ant-table-tbody > tr.ant-table-row-level-0:hover > td {
+    background: unset;
+  }

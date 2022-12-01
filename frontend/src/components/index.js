@@ -5,5 +5,6 @@ import NutritionCalcPage from "./NutritionPages/NutritionsCalcPage";
 import Calculator from "./NutritionPages/Calculator";
 import BottomBasicPage from "./BasicPages/BottomBasicPage";
 import Schedule from "./TrainingPages/schedule";
+import Login from "./Login/Login"
 
-export {Navbar, Section, BasicPage, NutritionCalcPage, Calculator, BottomBasicPage, Schedule} ;
+export {Navbar, Login, Section, BasicPage, NutritionCalcPage, Calculator, BottomBasicPage, Schedule} ;

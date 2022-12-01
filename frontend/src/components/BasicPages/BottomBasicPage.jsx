@@ -17,4 +17,3 @@ export default function BottomBasicPage(props) {
         <BasicPage img={props.img} comp={comp} />
     )
 }
-

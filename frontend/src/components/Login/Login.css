@@ -1,0 +1,24 @@
+.modal-login > .ant-modal-content {
+    border: 0.4vh solid #ea2a44;
+    margin-top: 20vh;
+    direction: rtl;
+}
+
+.modal-login > .ant-modal-content > .ant-modal-header {
+    border-bottom-color: #ea2a44 !important;
+}
+
+button.ant-btn.ant-btn-primary.login-button  {
+    background-color: #ea2a44;
+    border-color: #ea2a44;
+    margin-right: 1vh;
+}
+
+.modal-login > .ant-modal-content > .ant-modal-footer {
+    text-align: left;
+}
+
+button.ant-modal-close{
+    margin-right: 47vh;
+}
+
