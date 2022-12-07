@@ -4,7 +4,7 @@ import { server } from '../config'
 
 
 const calcCalories = async(params) => {
-    var result = await post(server + '/calc', params=params)
+    var result = await post(server + '/nutrition/calc', params=params)
     return result;
 }
 
