@@ -52,3 +52,35 @@ ul.ant-pagination.ant-table-pagination.ant-table-pagination-right {
 .ant-table-tbody > tr.ant-table-row-level-0:hover > td {
     background: unset;
   }
+
+button.ant-btn.ant-btn-default.lesson {
+    background-color: inherit;
+    color: currentcolor;
+}
+
+button.ant-btn.ant-btn-default.lesson:hover {
+    border-color: #ea2a44 !important;
+}
+
+.schedule-bottom-page {
+    display: grid;
+    justify-items: center;
+}
+
+.select-lesson-button, .done-select-lesson-button {
+    border-color: #ea2a44;
+    margin-left: 1vh;
+}
+
+.done-select-lesson-button:hover, .select-lesson-button:hover {
+    border-color: #ea2a44 !important;
+    color: #ea2a44 !important;
+}
+
+.bottom-button {
+    display: inline-flex;
+    margin-left: 25vh;
+    margin-top: 2vh;
+    direction: rtl;
+    justify-self: left;
+}

@@ -9,13 +9,13 @@ export default function TrainingHomePage() {
     const bottomValue = <>
         <div className='training'>
             <div className='training-section'>
-            <a href='/training/schedule'><Avatar src={muscleLogo} className='training-logo' /></a>
+            <a href='/training/general'><Avatar src={muscleLogo} className='training-logo' /></a>
                 <div className='divider' />
                 <h2>לוח אימונים </h2>
             </div>
 
             <div className='training-section'>
-                <Avatar src={calcLogo} className='training-logo' />
+            <a href='/training/personal'><Avatar src={calcLogo} className='training-logo' /></a>
                 <div className='divider' />
                 <h2> לוח אימונים אישי</h2>
             </div>

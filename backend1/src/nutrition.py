@@ -1,14 +1,13 @@
 from flask import Blueprint, request, jsonify, json
-from utils import calc
+from utils import get_sum_of_calories
+from conf.consts import *
 
 nutrition_bp = Blueprint('nutrition', __name__, url_prefix='/nutrition')
 
 @nutrition_bp.route("/calc", methods=["POST"])
 def get_calories():
     data = json.loads(request.data.decode())
-    print(data)
-    calories = int(calc(age=data['age'], weight=data['weight'], height=data['height'], training=data['training'], gender=data['gender']))
-    print(calories)
+    calories = int(get_sum_of_calories(age=data[AGE], weight=data[WEIGHT], height=data[HEIGHT], training=data[TRAINING], gender=data[GENDER]))
     return jsonify(calories)
 
 # with app.test_request_context(

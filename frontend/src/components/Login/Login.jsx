@@ -10,13 +10,14 @@ export default function Login () {
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [userName, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [phoneNumber, setPhoneNumber] = useState();
   
   const showModal = () => {
     setOpen(true);
   };
   
   const userData = async(params) => { 
-    const userLogin = await ((params === 'login') ? login({'user': userName, 'password':password}) : register({'user': userName, 'password':password}))
+    const userLogin = await ((params === 'login') ? login({'user': userName, 'password':password}) : register({'user': userName, 'password':password, 'phoneNumber':phoneNumber}))
     console.log(userLogin)
     if (userLogin){
      console.log('in')
@@ -39,7 +40,7 @@ export default function Login () {
   };
   
   const handleRegister = async() => {
-    console.log(userName, password)
+    console.log(userName, password, phoneNumber)
     setConfirmLoading(true)
     userData('register')
   }
@@ -55,14 +56,14 @@ export default function Login () {
         <Button className='login-button' key="submit" type="primary" loading={confirmLoading} onClick={handleRegister}>
         הרשמה
         </Button>,
-        <Button className='login-button' key="submit" type="primary" loading={confirmLoading} onClick={handleLogin}>
+        <Button className='login-button' key="login" type="primary" loading={confirmLoading} onClick={handleLogin}>
         כניסה
         </Button>
         ]}
       >
         <div className='user'> שם משתמש: </div><Input type='text' placeholder='שם משתמש' onChange={(e) => setUserName(e.target.value)}/> <br/><br/>
-        <div className='password'> סיסמא: </div><Input type='password' placeholder='סיסמא' onChange={(e) => setPassword(e.target.value)}/>
-        
+        <div className='password'> סיסמא: </div><Input type='password' placeholder='סיסמא' onChange={(e) => setPassword(e.target.value)}/> <br/><br/>
+        <div className='phoneNumber'> טלפון:</div><Input type='text' placeholder='מספר טלפון' onChange={(e) => setPhoneNumber(e.target.value)}/>
       </Modal>
     </>
   );

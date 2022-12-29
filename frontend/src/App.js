@@ -1,5 +1,5 @@
 import './App.css';
-import { Navbar, NutritionCalcPage, Schedule } from './components/index'
+import { Navbar, NutritionCalcPage, GeneralTraining, PersonalTraining } from './components/index'
 import { HomePage, NutritionHomePage, TrainingHomePage} from './Pages/index'
 import Avatar from 'antd/lib/avatar/avatar';
 import { logo } from './image/index';
@@ -24,7 +24,8 @@ export default function App() {
           <Route path={'/nutritions'} element={<NutritionHomePage />} />
           <Route path={'/nutritions/calc'} element={<NutritionCalcPage />} />
           <Route path={'/training'} element={<TrainingHomePage />} />
-          <Route path={'/training/schedule'} element={<Schedule />} />
+          <Route path={'/training/general'} element={<GeneralTraining />} />
+          <Route path={'/training/personal'} element={<PersonalTraining />} />
         </Routes>
       </Router>
     </div>
