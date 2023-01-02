@@ -5,9 +5,12 @@ import json
 import datetime
 from .user import User
 from twilioMessages import send_message_by_twilio
+from apscheduler.schedulers.background import BackgroundScheduler
 
 training_bp = Blueprint('training', __name__, url_prefix='/training')
 hours_list = []
+
+sched = BackgroundScheduler()
 
 class Training(db.Model):
     __bind_key__ = 'training'
@@ -53,7 +56,6 @@ def get_training_table():
 
         hour_dict[row.day] = row.lesson
     table.append(hour_dict)
-    send_message_to_registered()
     return json.dumps(table[1:])
 
 
@@ -103,6 +105,7 @@ def get_personal_training_table():
     table.append(hour_dict)
     return json.dumps(table[1:])
 
+
 def send_message_to_registered():
     registered, lesson = get_registered_per_hour()
     try:
@@ -111,6 +114,11 @@ def send_message_to_registered():
     except:
         pass
             
+try:
+    sched.add_job(func=send_message_to_registered,trigger='cron', hour=str(hours_list[0]-1)+'-'+str(hours_list[-1]), minute='30')
+    sched.start()
+except:
+    pass
 
 def get_registered_per_hour():
     registered = None
